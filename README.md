@@ -23,4 +23,4 @@ Frst, start your local MongoDB with a path you want to keep data
 mongod --dbpath [desired path]
 ```
 
-*beware using slash, '/' not '\'
+*beware using slash, / not \
