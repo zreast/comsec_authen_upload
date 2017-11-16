@@ -1,0 +1,23 @@
+{
+  "name": "Node-Angular-MongoDb-JWT-Auth",
+  "version": "0.0.1",
+  "authors": [
+    "Michael Cullen"
+  ],
+  "description": "Authentication with JSON Web Tokens in Node and Angular",
+  "ignore": [
+    "**/*.txt",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "angular": "1.3.12",
+    "angular-route": "1.3.12",
+    "ng-file-upload": "^12.2.13"
+  },
+  "license": "MIT",
+  "private": true
+}
