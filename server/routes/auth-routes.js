@@ -212,7 +212,7 @@ module.exports = {
 		fs.readdirSync(testFolder).forEach(file => {
 			list.push(file);
 		})
-		res.json(list);
+		res.json({file:list});
 	}
 
 }; /* @END/ module */
