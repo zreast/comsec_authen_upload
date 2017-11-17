@@ -12,18 +12,16 @@
     <table class="tables">
       <thead>
         <tr>
-          <th>Header Cell 1</th>
-          <th>Header Cell 2</th>
-          <th>Header Cell 3</th>
+          <th>File Name</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="list in file_array.file" ng-if="files.length&gt;0">
           <td>{{list.file}}</td>
-          <td>{{list.color}}</td>
           <td>
-            <button>Confirm</button>
-            <button>Reject</button>
+            <button>Download</button>
+            <button>Delete</button>
           </td>
         </tr>
       </tbody>

@@ -10,13 +10,11 @@
 		table.tables
 			thead
 				tr
-					th Header Cell 1
-					th Header Cell 2
-					th Header Cell 3
+					th File Name
+					th Actions
 			tbody
 				tr(ng-repeat='list in file_array.file' ng-if='files.length>0')
 					td {{list.file}}
-					td {{list.color}}
 					td
-						button Confirm
-						button Reject
+						button Download
+						button Delete
