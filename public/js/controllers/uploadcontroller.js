@@ -3,11 +3,9 @@ angular.module('fileUpload', ['ngFileUpload'])
     var vm = this;
     vm.submit = function(){ //function to call on form submit
         if (vm.upload_form.file.$valid && vm.file) { //check if form is valid
-            console.log(vm.file);
             vm.upload(vm.file); //call upload function
         }
     }
-
     vm.upload = function (file) {
         Upload.upload({
             url: 'http://localhost:3000/upload', //webAPI exposed to upload the file
