@@ -211,6 +211,7 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
       info:"Look! I am an about page."
     };
 
+		$scope.files = [{ "value":40,"color":"#F5A623" },{ "value":60,"color":"#F5A623" },{ "value":80,"color":"#F5A623" },{ "value":100,"color":"#F5A623" }];
 
     /*
     If JWT exists in session storage (i.e. user logged in)

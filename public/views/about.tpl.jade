@@ -1,0 +1,22 @@
+#upload.home
+	.text-vcenter.font_prompt
+		h1.hackertext No One Can Steal Your File
+		h3.white-text (except Hackerman)
+// /first section
+// second section - About
+#about.pad-section.font_prompt(style='background: linear-gradient(90deg, #cfecd0, #ffc5ca)')
+	.container.trans_container.font_1dot4(style='padding-left:2em;padding-right:2em;')
+		br
+		table.tables
+			thead
+				tr
+					th Header Cell 1
+					th Header Cell 2
+					th Header Cell 3
+			tbody
+				tr(ng-repeat='list in files | orderBy : "status_priority" : true' ng-if='files.length>0')
+					td {{list.value}}
+					td {{list.color}}
+					td
+						button Confirm
+						button Reject
