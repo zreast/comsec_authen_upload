@@ -18,8 +18,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="list in files | orderBy : &quot;status_priority&quot; : true" ng-if="files.length&gt;0">
-          <td>{{list.value}}</td>
+        <tr ng-repeat="list in file_array.file" ng-if="files.length&gt;0">
+          <td>{{list.file}}</td>
           <td>{{list.color}}</td>
           <td>
             <button>Confirm</button>

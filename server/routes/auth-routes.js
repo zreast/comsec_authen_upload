@@ -4,27 +4,27 @@ Route Definitions
 
 ============================================================ */
 
-/* ========================================================== 
+/* ==========================================================
 Modules/Packages Required
 ============================================================ */
 //To sign i.e. create the JWT
-var jwt = require('jsonwebtoken');  		//https://npmjs.org/package/node-jsonwebtoken										
+var jwt = require('jsonwebtoken');  		//https://npmjs.org/package/node-jsonwebtoken
 var db = require('../models/userModel');	//Mongoose Model
 
-/* ========================================================== 
+/* ==========================================================
 JSON Web Token Secret String
 ============================================================ */
 var secret = require('../config/jwtSecret');
 var fs = require('fs');
 
 var multer = require('multer');
-/* ========================================================== 
+/* ==========================================================
 Node Module
 ============================================================ */
 module.exports = {
 
 	/* ==========================================================
-	When you try to access a JWT secured route Express.js sends response 
+	When you try to access a JWT secured route Express.js sends response
 	"UnauthorizedError: No Authorization header was found"
 	without having to add any more code.
 	============================================================ */
@@ -57,7 +57,7 @@ module.exports = {
 
 			//check if username exists already
 			UserModel.findOne({username: req.body.username}, function (err, user) {
-				
+
 				if (err) {
 					console.log(err);
 					res.status(401).send("Unauthorised-error finding username in DB");
@@ -71,7 +71,7 @@ module.exports = {
 
 				//user does not exist already
 				else if (user == undefined) {
-				
+
 					var newUser = new UserModel( {
 						username : req.body.username,
 						password : req.body.password,
@@ -87,11 +87,11 @@ module.exports = {
 						else {
 							return res.status(200).send("New user saved to DB ok");
 						}
-					});	
+					});
 				}
 
 			})
-		};		
+		};
 	},
 
 
@@ -104,15 +104,15 @@ module.exports = {
 	  	//if is invalid, return 401
 	  	var username = req.body.username || '';
 		var password = req.body.password || '';
-		
+
 		//Angular Form validation also checks to ensure username and password fields are filled
 		if (username == '' || password == '') { 
-			return res.status(401).send("username or password fields are empty"); 
+			return res.status(401).send("username or password fields are empty");
 		}
 		else {
 
 			db.UserModel.findOne({username: req.body.username}, function (err, user) {
-				
+
 				if (err) {
 					console.log(err);
 					return res.status(401).end();
@@ -121,9 +121,9 @@ module.exports = {
 				if (user == undefined) {
 					return res.status(401).send("User undefined");
 				}
-				
+
 				user.comparePassword(req.body.password, function(err, isMatch) {
-					if (!isMatch) {					
+					if (!isMatch) {
 						console.log("Attempt failed to login with " + user.username);
 						return res.status(401).send("Password does not match");
 		            }
@@ -147,7 +147,7 @@ module.exports = {
 					*Send the token as JSON to user
 					*/
 					console.log(token)
-					res.json({ token: token });					
+					res.json({ token: token });
 				});
 			});
 		};
@@ -160,10 +160,10 @@ module.exports = {
 	logout : function(req, res) {
 		res.status(200).end();
 	},
-	
+
 
 	/*================================================================
-	$http GET /admin - secured by JWT 
+	$http GET /admin - secured by JWT
 	JWT is TX by client in HTTP packet header, JWT is checked
 	Express will return 401 and stop the route if token is not valid
 	=================================================================*/
@@ -178,7 +178,7 @@ module.exports = {
 	upload : function (req, res){
 		console.log(req.user.username)
 		/** Create Directory */
-		var dir = './uploads/' + req.user.username;	  
+		var dir = './uploads/' + req.user.username;
 		if (!fs.existsSync(dir)){
 			fs.mkdirSync(dir);
 		}
@@ -207,13 +207,13 @@ module.exports = {
 
 	/** Get download page */
 	download : function(req, res){
-		var dir = './uploads/' + req.user.username;	  
-		var list = [];
-		fs.readdirSync(testFolder).forEach(file => {
-			list.push(file);
+		var dir = './uploads/' + req.user.username;
+		var list = {file:[]};
+		fs.readdirSync(dir).forEach(file => {
+			list.file.push({file:file})
 		})
-		res.json({file:list});
+
+		res.json(list);
 	}
 
 }; /* @END/ module */
-

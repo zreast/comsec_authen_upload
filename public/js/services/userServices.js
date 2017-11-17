@@ -79,6 +79,18 @@ angular.module('myApp.userServices', [])
 		    return deferred.promise; //returns the promise
 		},
 
+		getFileList : function() {
+
+			var deferred = $q.defer();
+		  $http.get('/download')
+		    .success(function(data, status) {
+					deferred.resolve(data);
+		    })
+		    .error(function(reason, status) {
+
+		    });
+		    return deferred.promise; //returns the promise
+		},
 
 		getAdmin : function() {
 

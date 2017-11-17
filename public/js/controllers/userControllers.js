@@ -233,6 +233,22 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
 
 		$scope.files = [{ "value":40,"color":"#F5A623" },{ "value":60,"color":"#F5A623" },{ "value":80,"color":"#F5A623" },{ "value":100,"color":"#F5A623" }];
 
+		//Request
+		userService.getFileList({
+				url: 'http://localhost:8800/download', //webAPI exposed to upload the file
+		}).then(function (resp) { //upload function returns a promise
+				$scope.file_array = resp
+		}, function (resp) { //catch error
+				console.log('Error status: ' + resp.status);
+				$window.alert('Error status: ' + resp.status);
+		}, function (evt) {
+				console.log(evt);
+				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+				console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+				$scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
+		});
+
+
     /*
     If JWT exists in session storage (i.e. user logged in)
     Extract username from JWT

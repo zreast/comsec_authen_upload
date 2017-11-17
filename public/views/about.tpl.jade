@@ -14,8 +14,8 @@
 					th Header Cell 2
 					th Header Cell 3
 			tbody
-				tr(ng-repeat='list in files | orderBy : "status_priority" : true' ng-if='files.length>0')
-					td {{list.value}}
+				tr(ng-repeat='list in file_array.file' ng-if='files.length>0')
+					td {{list.file}}
 					td {{list.color}}
 					td
 						button Confirm
