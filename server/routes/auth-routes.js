@@ -203,6 +203,16 @@ module.exports = {
 	    	}
 			res.json({error_code:0,err_desc:null});
 		});
+	},
+
+	/** Get download page */
+	download : function(req, res){
+		var dir = './uploads/' + req.user.username;	  
+		var list = [];
+		fs.readdirSync(testFolder).forEach(file => {
+			list.push(file);
+		})
+		res.json({file:list});
 	}
 
 }; /* @END/ module */
