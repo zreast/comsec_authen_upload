@@ -1,4 +1,32 @@
-<div class="jumbotron push-down1 text-center">
-	<h1>About</h1>
-	<p>This is the About Page!!</p>
+
+<div class="home" id="upload">
+  <div class="text-vcenter font_prompt">
+    <h1 class="hackertext">No One Can Steal Your File</h1>
+    <h3 class="white-text">(except Hackerman)</h3>
+  </div>
+</div>
+<!-- /first section-->
+<!-- second section - About-->
+<div class="pad-section font_prompt" id="about" style="background: linear-gradient(90deg, #cfecd0, #ffc5ca);">
+  <div class="container trans_container font_1dot4" style="padding-left:2em;padding-right:2em;"><br/>
+    <table class="tables">
+      <thead>
+        <tr>
+          <th>Header Cell 1</th>
+          <th>Header Cell 2</th>
+          <th>Header Cell 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="list in files | orderBy : &quot;status_priority&quot; : true" ng-if="files.length&gt;0">
+          <td>{{list.value}}</td>
+          <td>{{list.color}}</td>
+          <td>
+            <button>Confirm</button>
+            <button>Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
