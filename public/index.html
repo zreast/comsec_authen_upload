@@ -25,23 +25,27 @@
   </head>
   <body ng-app="myApp">
     <div class="navbar navbar-inverse navbar-fixed-top nav_override" role="navigation">
-      <div class="container">
+      <div class="container" style="padding:0.5em;">
         <!-- Group Brand and toggle for better mobile display-->
-        <div class="navbar-header"><a class="plain_link navbar-brand" href="#/">Hackerman Secure File Storage</a>
+        <div class="navbar-header"><a class="plain_link navbar-brand font_1dot4" href="#/">Hackerman Secure File Storage</a>
           <!-- Collapse Button-->
           <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
         <!-- @END navbar header-->
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse font_1dot2">
           <ul class="nav navbar-nav">
-            <li ng-show="auth.isLogged"><a class="plain_link" href="#/admin">Upload</a></li>
+            <li ng-show="auth.isLogged"><a class="plain_link" href="#/admin"> 
+                <div class="fa fa-upload"></div>&nbsp;Upload</a></li>
             <!-- <li><a href="#/">Admin</a></li>-->
-            <li ng-show="auth.isLogged"><a class="plain_link" href="#/about">My Files</a></li>
+            <li ng-show="auth.isLogged"><a class="plain_link" href="#/about"> 
+                <div class="fa fa-folder"></div>&nbsp;My Files</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li ng-if="auth.isLogged" ng-model="welcome"><a style="cursor:default; color:white;">{{welcome}}</a></li>
-            <li ng-if="auth.isLogged" ng-model="welcome"><a class="plain_link" href="#/logout">Logout</a></li>
-            <li ng-if="!auth.isLogged"><a class="plain_link" href="#/login">Login</a></li>
+            <li ng-if="auth.isLogged" ng-model="welcome"><a class="plain_link" href="#/logout"> 
+                <div class="fa fa-sign-out"></div>&nbsp;Logout</a></li>
+            <li ng-if="!auth.isLogged"><a class="plain_link" href="#/login"> 
+                <div class="fa fa-sign-in"></div>&nbsp;Login</a></li>
           </ul>
         </div>
       </div>

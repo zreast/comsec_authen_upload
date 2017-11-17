@@ -1,0 +1,33 @@
+#upload.home
+	.text-vcenter.font_prompt
+		h1.hackertext No One Can Steal Your File
+		h3.white-text (except Hackerman)
+// /first section
+// second section - About
+#about.pad-section.font_prompt(style='background: linear-gradient(90deg, #cfecd0, #ffc5ca);')
+	.container.trans_container.font_1dot4
+		br
+		h2
+			span.label.label-info {{message.info}}
+		h1.center.white-text File Upload
+		br
+
+		form(name='upload_form')
+			span.center#filename Select your file...
+			label(for='file-upload')
+				| Browse
+				input#file-upload(type='file', ngf-select='', ng-model='file', name='file', ngf-pattern="'image/*'", accept='image/*', ngf-max-size='20MB')
+			br
+			br
+			.upload_module
+				.thumbnail_container
+					img(ng-show='!!file', ngf-thumbnail="file || 'assets/img/thumbnail.jpg'")
+				i(ng-show='upload_form.file.$error.required') *required
+				i(ng-show='upload_form.file.$error.maxSize')
+					| File too large
+					| {{file.size / 1000000|number:1}}MB: max 20M
+				| &nbsp;&nbsp;{{progress}}
+			br
+			button.btn-lg.btn-block.btn-info.upload_button(type='submit', ng-click='submit()') Upload
+			
+			p 

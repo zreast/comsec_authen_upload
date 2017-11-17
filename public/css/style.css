@@ -5,6 +5,9 @@ SCSS Kit by Zreast
 .font_prompt {
   font-family: 'Prompt',sans-serif; }
 
+.center {
+  text-align: center; }
+
 .pos_fix {
   position: fixed;
   z-index: 999; }
@@ -197,6 +200,17 @@ footer.page-footer {
   -o-background-size: cover;
   background-size: cover; }
 
+#upload {
+  background: url("../assets/img/hackerman4.png") no-repeat center center fixed;
+  display: table;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 #services {
   background-color: #306d9f;
   color: #ffffff; }
@@ -324,3 +338,122 @@ footer {
         color: #26a69a; }
   .footer_override h3 {
     font-family: 'Prompt'; }
+
+.login_module {
+  background-color: #263238;
+  padding-top: 150px; }
+  .login_module h3 {
+    color: #ecf0f1; }
+  .login_module p {
+    padding-top: 10px;
+    color: #ecf0f1;
+    font-size: 1.4em; }
+    .login_module p .big {
+      font-size: 1.4em; }
+  .login_module a {
+    color: #f1c40f; }
+  .login_module a:hover {
+    color: #efa039;
+    text-decoration: none; }
+  .login_module label {
+    color: #ecf0f1;
+    padding-top: 10px;
+    font-size: 1.6rem; }
+  .login_module .label-register {
+    color: rgba(0, 109, 128, 0.52); }
+  .login_module button {
+    margin-top: 20px; }
+  .login_module .border-login {
+    border-right: 1px solid #fff;
+    min-height: 450px;
+    float: right; }
+  .login_module .space-top {
+    padding-top: 50px; }
+  .login_module .modal-header {
+    min-height: 16.42857143px;
+    padding: 9px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #263238;
+    color: #fff;
+    border-top: 1px solid #e65100;
+    border-radius: 0; }
+  .login_module .modal-footer {
+    padding: 9px;
+    text-align: right;
+    border-top: 1px solid #607D8B; }
+  .login_module .modal-content {
+    position: relative;
+    background-color: #CFD8DC;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-left: 1px solid #e65100;
+    border-right: 1px solid #e65100;
+    border-bottom: 1px solid #e65100;
+    border-radius: 0;
+    outline: 0; }
+  .login_module .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    /* border: 1px solid transparent; */
+    border-radius: 0; }
+
+#file-upload {
+  position: absolute;
+  left: -9999px; }
+
+label[for="file-upload"] {
+  padding: 0.5em;
+  display: inline-block;
+  background: #86cf88;
+  cursor: pointer; }
+  label[for="file-upload"]:hover {
+    background: #91d393; }
+
+#filename {
+  padding: 0.5em;
+  float: left;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #aadeac; }
+
+.trans_container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-left: 6em;
+  padding-right: 6em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border: 2px solid white;
+  border-radius: 10px; }
+
+.thumbnail_container {
+  border: 2px dashed white;
+  border-radius: 10px;
+  height: auto;
+  width: 300px; }
+  .thumbnail_container img {
+    height: auto;
+    width: 295px;
+    border-radius: 10px; }
+
+.upload_module {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }

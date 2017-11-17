@@ -1,40 +1,32 @@
-  
 
-<div class = "container push-down1">
-
-
-  <div class="col-sm-6 col-sm-offset-3">
-    <h1><span class="fa fa-sign-in"></span> Login</h1>
-
-    <!-- Show welcome message when logged in -->
-    <h2><span ng-show="auth.isLogged" class="label label-success">{{message.success}}</span></h2>
-
-    <!-- Form to input username and password  -->
-    <form name="fmLogin" novalidate ng-show="!AuthenticationService.isLogged" ng-submit="login()">
-
-      <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" name="username" ng-model="user.username" ng-required="true">
-      </div>
-
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password" ng-model="user.password" ng-required="true">
-      </div>
-
-      <button type="submit" class="btn btn-warning btn-lg" ng-disabled="fmLogin.$invalid">Login</button>
-
-
-    </form>
-    
-    <h2><span class="label label-info">{{message.info}}</span></h2>
-    <h2><span class="label label-warning">{{message.error}}</span></h2>
-
-    <hr>
-
-    <p>Need an account? <a href="#/register">Register</a></p>
-    <p>Or go <a href="#/">home</a>.</p>
-
+<div class="login_module font_prompt">
+  <div class="row">
+    <div class="col-sm-6 col-md-5 hidden-xs hidden-sm"><img class="center-block img-responsive" src="../assets/img/hacker_login.png" alt=""/></div>
+    <div class="col-md-1 hidden-xs hidden-sm">
+      <div class="border-login"></div>
     </div>
-
+    <div class="col-sm-12 col-xs-12 col-md-4">
+      <div class="space-top">
+        <form name="fmLogin" novalidate="" ng-show="!auth.isLogged" ng-submit="login()">
+          <h3 class="text-center">เข้าสู่ระบบ</h3>
+          <form class="form-signin">
+            <label> Username</label>
+            <input class="form-control" type="text" name="username" ng-model="user.username" ng-required="true"/>
+            <label> Password</label>
+            <input class="form-control" type="password" name="password" ng-model="user.password" ng-required="true"/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="fmLogin.$invalid" style="padding:1em;">
+              <div class="font_1dot2">
+                <div class="fa fa-sign-in"></div>&nbsp;Log In
+              </div>
+            </button>
+          </form>
+        </form>
+      </div>
+      <p class="text-center" ng-show="auth.isLogged">เข้าสู่ระบบสำเร็จ! <a class="font_1dot2" href="#/admin" data-toggle="modal" data-target="#myModal">ไปหน้าอัปโหลด </a></p>
+      <div class="center" ng-if="auth.isLogged">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0YXSI8sJ960?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      <p class="text-center" ng-show="!auth.isLogged">ยังไม่ได้เป็นสมาชิก? <a href="#/register" data-toggle="modal" data-target="#myModal"> สมัครสิรอไร</a></p>
+    </div>
+  </div>
 </div>

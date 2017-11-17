@@ -1,8 +1,8 @@
 .navbar.navbar-inverse.navbar-fixed-top.nav_override(role='navigation')
-	.container
+	.container(style='padding:0.5em')
 		// Group Brand and toggle for better mobile display
 		.navbar-header
-			a.plain_link.navbar-brand(href='#/') Hackerman Secure File Storage
+			a.plain_link.navbar-brand.font_1dot4(href='#/') Hackerman Secure File Storage
 			// Collapse Button
 			button.navbar-toggle(type='button', data-target='.navbar-collapse', data-toggle='collapse')
 				span.sr-only Toggle navigation
@@ -10,17 +10,25 @@
 				span.icon-bar
 				span.icon-bar
 		// @END navbar header
-		.collapse.navbar-collapse
+		.collapse.navbar-collapse.font_1dot2
 			ul.nav.navbar-nav
 				li(ng-show='auth.isLogged')
-					a.plain_link(href='#/admin') Upload
+					a.plain_link(href='#/admin') 
+						.fa.fa-upload
+						| &nbsp;Upload
 				// <li><a href="#/">Admin</a></li>
 				li(ng-show='auth.isLogged')
-					a.plain_link(href='#/about') My Files
+					a.plain_link(href='#/about') 
+						.fa.fa-folder
+						| &nbsp;My Files
 			ul.nav.navbar-nav.navbar-right
 				li(ng-if='auth.isLogged', ng-model='welcome')
 					a(style='cursor:default; color:white') {{welcome}}
 				li(ng-if='auth.isLogged', ng-model='welcome')
-					a.plain_link(href='#/logout') Logout
+					a.plain_link(href='#/logout') 
+						.fa.fa-sign-out
+						| &nbsp;Logout
 				li(ng-if='!auth.isLogged')
-					a.plain_link(href='#/login') Login
+					a.plain_link(href='#/login') 
+						.fa.fa-sign-in
+						| &nbsp;Login
