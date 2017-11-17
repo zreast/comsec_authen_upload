@@ -29,8 +29,7 @@ module.exports = function(app)
 	app.post('/login', authRoutes.login);
 	app.post('/logout', authRoutes.logout);
 	app.get('/admin', expressJwt({secret:secret.JWTsecret}), authRoutes.getAdmin);
-
-
+	app.post('/upload', expressJwt({secret:secret.JWTsecret}), authRoutes.upload);
 
 }; /* @END/ module */
 

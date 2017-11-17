@@ -15,8 +15,9 @@ var db = require('../models/userModel');	//Mongoose Model
 JSON Web Token Secret String
 ============================================================ */
 var secret = require('../config/jwtSecret');
+var fs = require('fs');
 
-
+var multer = require('multer');
 /* ========================================================== 
 Node Module
 ============================================================ */
@@ -145,7 +146,8 @@ module.exports = {
 					/*
 					*Send the token as JSON to user
 					*/
-					res.json({ token: token });
+					console.log(token)
+					res.json({ token: token });					
 				});
 			});
 		};
@@ -166,9 +168,41 @@ module.exports = {
 	Express will return 401 and stop the route if token is not valid
 	=================================================================*/
 	getAdmin : function (req, res) {
-	  console.log('user ' + req.username + ' is calling /admin');
+	  console.log('user ' + req.user.username + ' is calling /admin');
 	  console.info("req token=" +JSON.stringify(req.headers));
+	  console.log(req)
 	  res.send(req.username);
+	},
+
+	/** API path that will upload the files */
+	upload : function (req, res){
+		console.log(req.user.username)
+		/** Create Directory */
+		var dir = './uploads/' + req.user.username;	  
+		if (!fs.existsSync(dir)){
+			fs.mkdirSync(dir);
+		}
+		/** Setting */
+		var storage = multer.diskStorage({ //multers disk storage settings
+			destination: function (req, file, cb) {
+				cb(null, dir);
+			},
+			filename: function (req, file, cb) {
+				var datetimestamp = Date.now();
+				cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
+			}
+		});
+		var upload = multer({ //multer settings
+			storage: storage
+		}).single('file');
+
+		upload(req,res,function(err){
+			if(err){
+				res.json({error_code:1,err_desc:err});
+				return;
+	    	}
+			res.json({error_code:0,err_desc:null});
+		});
 	}
 
 }; /* @END/ module */
