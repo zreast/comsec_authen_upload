@@ -34,9 +34,9 @@
         <!-- @END navbar header-->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li ng-show="auth.isLogged"><a class="plain_link" href="#/admin">Admin</a></li>
+            <li ng-show="auth.isLogged"><a class="plain_link" href="#/admin">Upload</a></li>
             <!-- <li><a href="#/">Admin</a></li>-->
-            <li ng-show="auth.isLogged"><a class="plain_link" href="#/about">About</a></li>
+            <li ng-show="auth.isLogged"><a class="plain_link" href="#/about">My Files</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li ng-if="auth.isLogged" ng-model="welcome"><a class="plain_link" href="#/logout">{{welcome}}! Logout</a></li>

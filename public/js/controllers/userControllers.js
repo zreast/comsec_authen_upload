@@ -19,7 +19,7 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
   if (AuthenticationService.isLogged) {
     $log.info("Logged in already!!!!"); //TEST
     $scope.message.info = "You are Logged in already - You will be diverted to /admin Automatically!!!!";
-    $location.path("/admin");
+    //$location.path("/admin");
   }
 
   /*

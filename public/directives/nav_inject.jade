@@ -13,10 +13,10 @@
 		.collapse.navbar-collapse
 			ul.nav.navbar-nav
 				li(ng-show='auth.isLogged')
-					a.plain_link(href='#/admin') Admin
+					a.plain_link(href='#/admin') Upload
 				// <li><a href="#/">Admin</a></li>
 				li(ng-show='auth.isLogged')
-					a.plain_link(href='#/about') About
+					a.plain_link(href='#/about') My Files
 			ul.nav.navbar-nav.navbar-right
 				li(ng-if='auth.isLogged', ng-model='welcome')
 					a.plain_link(href='#/logout') {{welcome}}! Logout
