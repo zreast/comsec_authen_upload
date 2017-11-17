@@ -1,0 +1,25 @@
+nav.nav-extended.cyan.accent-4
+	.nav-wrapper
+		a.brand-logo(href='#') DaBest Secure File Storage
+		a.button-collapse(href='#', data-activates='mobile-demo')
+			i.material-icons menu
+		ul#nav-mobile.right.hide-on-med-and-down
+			li(ng-if='auth.isLogged', ng-model='welcome')
+				a(href='#/logout') {{welcome}}! Logout
+			li(ng-if='!auth.isLogged')
+				a(href='#/login') Login
+		ul#mobile-demo.side-nav
+			li(ng-if='auth.isLogged', ng-model='welcome')
+				a(href='#/logout') {{welcome}}! Logout
+			li(ng-if='!auth.isLogged')
+				a(href='#/login') Login
+	.nav-content
+		ul.tabs.tabs-transparent
+			li.tab
+				a.active(href='#/') Home
+			li.tab
+				a.active(href='#/admin') About
+			li.tab(ng-show='auth.isLogged')
+				a.active(href='#/admin') Upload File
+			li.tab(ng-show='auth.isLogged')
+				a(href='#/about') My Storage

@@ -1,64 +1,80 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <title>Angular JSON Web Token(JWT) Authentication</title>
-	<!-- CSS -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-  </head>
-
-  <body ng-app="myApp">
-
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-
-            <!-- Group Brand and toggle for better mobile display -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#/">JWT Authentication</a>
-                <!-- Collapse Button -->
-                <button type="button" data-target=".navbar-collapse" data-toggle="collapse"
-                    class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div> <!-- @END navbar header -->
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li ng-show="auth.isLogged"><a href="#/admin">Admin</a></li>
-                    <!-- <li><a href="#/">Admin</a></li> -->
-                    <li ng-show="auth.isLogged"><a href="#/about">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li ng-if="auth.isLogged" ng-model="welcome"><a href="#/logout">{{welcome}}! Logout</a></li>
-                    <li ng-if="!auth.isLogged"><a href="#/login">Login</a></li>
-
-				</ul>
-            </div>
-        </div> <!-- @END/ .container -->
-    </div> <!-- @END/ navbar -->
-
-
-    <!-- Views are rendered here -->
-    <div ng-view></div>
-
-
-	<!-- JS -->
-	<script src="bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-  <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
+    <title>DaBest Secure File Upload</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/controllers/userControllers.js"></script>
     <script src="js/services/jwtTokenHelpers.js"></script>
     <script src="js/services/authServices.js"></script>
     <script src="js/services/userServices.js"></script>
-
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/form_wrapper.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <nav class="nav-extended cyan accent-4">
+      <div class="nav-wrapper"><a class="brand-logo" href="#">DaBest Secure File Storage</a><a class="button-collapse" href="#" data-activates="mobile-demo"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down" id="nav-mobile">
+          <li ng-if="auth.isLogged" ng-model="welcome"><a href="#/logout">{{welcome}}! Logout</a></li>
+          <li ng-if="!auth.isLogged"><a href="#/login">Login</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li ng-if="auth.isLogged" ng-model="welcome"><a href="#/logout">{{welcome}}! Logout</a></li>
+          <li ng-if="!auth.isLogged"><a href="#/login">Login</a></li>
+        </ul>
+      </div>
+      <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a class="active" href="#/">Home</a></li>
+          <li class="tab"><a class="active" href="#/admin">About</a></li>
+          <li class="tab" ng-show="auth.isLogged"><a class="active" href="#/admin">Upload File</a></li>
+          <li class="tab" ng-show="auth.isLogged"><a href="#/about">My Storage
+              <!-- @END/ .container--></a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- @END/ navbar-->
+    <!-- Views are rendered here-->
+    <div ng-view=""></div>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row font_prompt">
+          <div class="col l6 s12">
+            <h5 class="white-text">เกี่ยวกับเรา</h5>
+            <p class="grey-text text-lighten-4">Fusce iaculis fringilla tincidunt. Pellentesque velit massa, faucibus vitae laoreet sed, iaculis in urna. Integer auctor, elit in facilisis tristique, dui lacus faucibus massa, ac placerat ligula tortor a mi.</p>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">ข้อมูล</h5>
+            <ul>
+              <li><a class="white-text" href="#!">เงื่อนไขการใช้บริการ</a></li>
+              <li><a class="white-text" href="#!"> นโยบายความเป็นส่วนตัว</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">ติดต่อ</h5>
+            <ul>
+              <li><a class="white-text" href="#!">โทร. :</a></li>
+              <li><a class="white-text" href="#!">Fax :</a></li>
+              <li><a class="white-text" href="#!">admin@email.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">Made by Zreast @CE_KMITL</div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -62,6 +62,13 @@ app.use(logger('dev'));				//log request in dev mode only to the console
 /* ==========================================================
 serve the static index.html from the public folder
 ============================================================ */
+app.use(function(req, res, next) { //allow cross origin requests
+    res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");
+    res.header("Access-Control-Allow-Origin", "http://localhost");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.use(express.static(__dirname + "/public"));
 
 

@@ -1,0 +1,90 @@
+@import "colors.scss";
+/* label color */
+.input-field label {
+ color: #000;
+}
+/* label focus color */
+.input-field input:focus + label {
+ color: $md-orange-300 !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+ border-bottom: 1px solid $md-orange-300 !important;
+ box-shadow: 0 1px 0 0 $md-orange-300 !important;
+}
+/* valid color */
+.input-field input.valid {
+ border-bottom: 1px solid $md-orange-300 !important;
+ box-shadow: 0 1px 0 0 $md-orange-300 !important;
+}
+/* invalid color */
+.input-field input.invalid {
+ border-bottom: 1px solid $md-orange-300 !important;
+ box-shadow: 0 1px 0 0 $md-orange-300 !important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: $md-orange-300 !important;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
+  border: 2px solid $md-orange-300 !important;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
+  background-color: $md-orange-300 !important;
+}
+
+[type="checkbox"].filled-in:checked + label:after {
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $md-orange-300 !important;
+  background-color: $md-orange-300 !important;
+  z-index: 0;
+}
+
+[type="checkbox"].filled-in.tabbed:focus + label:after {
+  border-radius: 2px;
+  border-color: #5a5a5a;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+[type="checkbox"].filled-in.tabbed:checked:focus + label:after {
+  border-radius: 2px;
+  background-color: $md-orange-300 !important;
+  border-color: $md-orange-300 !important;
+}
+
+.picker__date-display {
+  text-align: left;
+  background-color: $md-orange-300 !important;
+  color: #fff;
+  padding: 18px;
+  font-weight: 300;
+}
+
+.picker__day.picker__day--today {
+  color: #26a69a;
+}
+
+.picker__day.picker__day--today.picker__day--selected {
+  color: #fff;
+}
+
+.picker__weekday {
+  font-size: .9rem;
+}
+
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  border-radius: 50%;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  background-color: $md-orange-300 !important;
+  color: #ffffff;
+}

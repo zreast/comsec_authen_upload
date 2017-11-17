@@ -1,0 +1,16 @@
+doctype html
+html(lang='en')
+	head
+		title DaBest Secure File Upload
+		meta(name='Keywords', content='')
+		meta(name='Description', content='')
+		include directives/inject.jade
+		
+	body(ng-app='myApp')
+		include directives/nav_inject.jade
+
+			// @END/ .container
+		// @END/ navbar
+		// Views are rendered here
+		div(ng-view='')
+		include directives/footer.jade
