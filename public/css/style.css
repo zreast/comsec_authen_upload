@@ -1,4 +1,244 @@
+/*
+SCSS Kit by Zreast
+ */
+@import url(https://fonts.googleapis.com/css?family=Prompt);
+.font_prompt {
+  font-family: 'Prompt',sans-serif; }
+
+.pos_fix {
+  position: fixed;
+  z-index: 999; }
+
+.op_10 {
+  opacity: 0.1; }
+
+.op_30 {
+  opacity: 0.3; }
+
+.op_50 {
+  opacity: 0.5; }
+
+.op_70 {
+  opacity: 0.7; }
+
+.font_1dot0 {
+  font-size: 1em; }
+
+.t0x {
+  font-size: 0em;
+  margin: 0px; }
+
+.font_1dot1 {
+  font-size: 1.1em; }
+
+.t1x {
+  font-size: 1em;
+  margin: 0px; }
+
+.font_1dot2 {
+  font-size: 1.2em; }
+
+.t2x {
+  font-size: 2em;
+  margin: 0px; }
+
+.font_1dot3 {
+  font-size: 1.3em; }
+
+.t3x {
+  font-size: 3em;
+  margin: 0px; }
+
+.font_1dot4 {
+  font-size: 1.4em; }
+
+.t4x {
+  font-size: 4em;
+  margin: 0px; }
+
+.font_1dot5 {
+  font-size: 1.5em; }
+
+.t5x {
+  font-size: 5em;
+  margin: 0px; }
+
+.font_1dot6 {
+  font-size: 1.6em; }
+
+.t6x {
+  font-size: 6em;
+  margin: 0px; }
+
+.font_1dot7 {
+  font-size: 1.7em; }
+
+.t7x {
+  font-size: 7em;
+  margin: 0px; }
+
+.font_1dot8 {
+  font-size: 1.8em; }
+
+.t8x {
+  font-size: 8em;
+  margin: 0px; }
+
+.font_1dot9 {
+  font-size: 1.9em; }
+
+.t9x {
+  font-size: 9em;
+  margin: 0px; }
+
+.font_1dot10 {
+  font-size: 2em; }
+
+.t10x {
+  font-size: 10em;
+  margin: 0px; }
+
+.font_1dot11 {
+  font-size: 2.1em; }
+
+.t11x {
+  font-size: 11em;
+  margin: 0px; }
+
+.font_1dot12 {
+  font-size: 2.2em; }
+
+.t12x {
+  font-size: 12em;
+  margin: 0px; }
+
+@media only screen and (max-width: 320px) {
+  .font_responsive {
+    font-size: 1em; } }
+
+@media only screen and (max-width: 1024px) {
+  .font_responsive {
+    font-size: 1.5em; } }
+
+@media only screen and (max-width: 1365px) {
+  .font_responsive {
+    font-size: 1.5em; } }
+
+@media only screen and (max-width: 3448px) {
+  .font_responsive {
+    font-size: 1.5em; } }
+
+@media only screen and (max-width: 500px) {
+  .hide_500 {
+    display: none !important; } }
+
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%; }
+  #index-banner .section {
+    top: 10%; } }
+
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0; } }
+
+.icon-block {
+  padding: 0 15px; }
+  .icon-block .material-icons {
+    font-size: inherit; }
+
+footer.page-footer {
+  margin: 0; }
 
 .push-down1 {
-	margin-top: 100px;
-}
+  margin-top: 100px; }
+
+/* padded section */
+.pad-section {
+  padding: 50px 0; }
+  .pad-section img {
+    width: 100%; }
+
+/* vertical-centered text */
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+  .text-vcenter h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0; }
+  .text-vcenter .hackertext {
+    -webkit-animation: flicker 2s infinite alternate; }
+
+@-webkit-keyframes flicker {
+  0% {
+    color: #00acc1; }
+  25% {
+    color: #ffeb3b; }
+  50% {
+    color: #00897b; }
+  75% {
+    color: #ff4081; }
+  100% {
+    color: #039be5; } }
+
+/* additional sections */
+#home {
+  background: url("../assets/img/hackerman.jpg") no-repeat center center fixed;
+  display: table;
+  height: 500px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#services {
+  background-color: #306d9f;
+  color: #ffffff; }
+  #services .fa {
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 60px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    vertical-align: middle;
+    width: 140px; }
+
+#information {
+  background: url("../assets/img/hackerman2.jpg") no-repeat center center fixed;
+  display: table;
+  height: 800px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  #information .panel {
+    opacity: 0.85; }
+
+footer {
+  padding: 20px 0; }
+  footer .glyphicon {
+    color: #333333;
+    font-size: 60px; }
+    footer .glyphicon:hover {
+      color: #306d9f; }
+
+#footr {
+  background: url("../assets/img/hackerman3.jpg") no-repeat center center fixed;
+  display: table;
+  height: 300px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
