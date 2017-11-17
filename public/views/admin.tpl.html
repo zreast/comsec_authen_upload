@@ -1,20 +1,27 @@
-<div class="container push-down1">
-	<br/>
-	<br/>
-    <h2><span class="label label-info">{{message.info}}</span></h2>
 
-	<h1>Admin</h1>
-	<p>This is a secured area</p>
-	<form name="upload_form">Single Image with validations
-              <input type="file" ngf-select="" ng-model="file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB">            Image thumbnail:<img style="width:100px;" ng-show="!!file" ngf-thumbnail="file || '/thumb.jpg'"><i ng-show="upload_form.file.$error.required">*required</i><br><i ng-show="upload_form.file.$error.maxSize">
-                File too large
-                {{file.size / 1000000|number:1}}MB: max 20M</i>
-              <!--
-              Multiple files
-              <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
-              Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div>
-              -->
-              <button type="submit" ng-click="submit()">submit</button>
-              <p>{{up.progress}}</p>
-            </form>
+<div class="home" id="home">
+  <div class="text-vcenter font_prompt">
+    <h1 class="hackertext">Keep Your Files Always Secure</h1>
+    <h3 class="white-text">เดอะเบส</h3><a class="btn btn-default btn-lg font_1dot4" href="#register" style="padding: 1em 2em 1em 2em;">สมัครสมาชิก</a>
+  </div>
+</div>
+<!-- /first section-->
+<!-- second section - About-->
+<div class="pad-section font_prompt" id="about" style="background: linear-gradient(90deg, #cfecd0, #ffc5ca);">
+  <div class="container trans_container font_1dot4"><br/>
+    <h2><span class="label label-info">{{message.info}}</span></h2>
+    <h1 class="center white-text">File Upload</h1><br/>
+    <form name="upload_form"><span class="center" id="filename">Select your file...</span>
+      <label for="file-upload">Browse
+        <input id="file-upload" type="file" ngf-select="" ng-model="file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"/>
+      </label><br/><br/>
+      <div class="upload_module">
+        <div class="thumbnail_container"><img ng-show="!!file" ngf-thumbnail="file || 'assets/img/thumbnail.jpg'"/></div><i ng-show="upload_form.file.$error.required">*required</i><i ng-show="upload_form.file.$error.maxSize">
+          File too large
+          {{file.size / 1000000|number:1}}MB: max 20M</i>&nbsp;&nbsp;{{progress}}
+      </div><br/>
+      <button class="btn-lg btn-block btn-info upload_button" type="submit" ng-click="submit()">Upload</button>
+      <p> </p>
+    </form>
+  </div>
 </div>

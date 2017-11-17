@@ -12,6 +12,9 @@ $bb_main_theme: #ffebee;
 .font_prompt{
 		font-family: 'Prompt',sans-serif;
 }
+.center{
+	text-align: center;
+}
 
 .pos_fix{
   position: fixed;
@@ -305,4 +308,155 @@ footer {
 	h3{
 		font-family: 'Prompt';
 	}
+}
+
+.login_module{
+	background-color: #263238;
+	padding-top: 150px;
+		h3{
+	  color:#ecf0f1;
+	}
+
+	p{
+	  padding-top:10px;
+	  color:#ecf0f1;
+	  font-size:1.4em;
+		.big{
+			font-size:1.4em;
+		}
+	}
+
+
+	a{
+	  color:#f1c40f;
+	}
+
+
+	 a:hover {
+	    color: #efa039;
+	    text-decoration: none;
+	}
+
+	label {
+	  color:#ecf0f1;
+	  padding-top:10px;
+	  font-size:1.6rem;
+	}
+
+	.label-register{
+	 color:rgba(0, 109, 128, 0.52);
+	}
+
+	button{
+	  margin-top:20px;
+	}
+
+	.border-login{
+	  border-right:1px solid #fff;
+	  min-height:450px;
+	  float:right;
+	}
+
+	.space-top{
+	  padding-top:50px;
+	}
+
+	.modal-header {
+	    min-height: 16.42857143px;
+	    padding: 9px;
+	    border-bottom: 1px solid #e5e5e5;
+	    background: #263238;
+	    color: #fff;
+	    border-top: 1px solid #e65100;
+	    border-radius: 0;
+	}
+
+	.modal-footer {
+	    padding: 9px;
+	    text-align: right;
+	    border-top: 1px solid #607D8B;
+	}
+
+	.modal-content {
+	    position: relative;
+	    background-color: #CFD8DC;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border-left: 1px solid #e65100;
+	    border-right: 1px solid #e65100;
+	    border-bottom: 1px solid #e65100;
+	    border-radius: 0;
+	    outline: 0;
+	  }
+
+	.btn {
+	    display: inline-block;
+	    padding: 6px 12px;
+	    margin-bottom: 0;
+	    font-size: 14px;
+	    font-weight: normal;
+	    line-height: 1.42857143;
+	    text-align: center;
+	    white-space: nowrap;
+	    vertical-align: middle;
+	    -ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	    cursor: pointer;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    background-image: none;
+	    /* border: 1px solid transparent; */
+	    border-radius: 0;
+	}
+}
+
+$purple:#cfecd0;
+
+#file-upload {
+    position: absolute;
+    left: -9999px;
+}
+
+label[for="file-upload"]{
+  padding:0.5em;
+  display:inline-block;
+  background:darken($purple ,20%);
+  cursor:pointer;
+  &:hover{background:darken($purple ,17%)}
+}
+#filename{
+  padding:0.5em;
+  float:left;
+  width:300px;
+  white-space: nowrap;
+  overflow:hidden;
+  background:darken($purple ,10%);
+}
+
+.trans_container{
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding-left: 6em;
+	padding-right: 6em;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+.thumbnail_container{
+	border: 2px dashed white;
+	border-radius: 10px;
+	height: auto;
+	width: 300px;
+	img{
+		height: auto;
+		width: 295px;
+		border-radius: 10px;
+	}
+}
+
+.upload_module{
+	display: flex;
 }

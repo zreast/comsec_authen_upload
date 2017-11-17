@@ -129,7 +129,7 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
     .then(function(profile) {
         AuthenticationService.isLogged = true;      //Logged In
         $scope.message.error = "";
-        $rootScope.welcome = 'You are Logged on as ' + JSON.stringify(profile.username) + " | ";
+        $rootScope.welcome = 'Welcome ' + JSON.stringify(profile.username);
       },
       function(error) {
         AuthenticationService.isLogged = false; //Logged Out
