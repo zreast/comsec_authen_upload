@@ -9,8 +9,7 @@
 <!-- second section - About-->
 <div class="pad-section font_prompt" id="about" style="background: linear-gradient(90deg, #aea4e3, #d3ffe8); ;">
   <div class="container trans_container font_1dot4"><br/>
-    <h1 class="center white-text">File Upload</h1><br/>{{key_log}}
-    <div id="json"></div>
+    <h1 class="center white-text">File Upload</h1><br/>
     <form name="upload_form"><span class="center" id="filename">Select your file...</span>
       <label for="file-upload">Browse
         <input id="file-upload" type="file" ngf-select="" ng-model="file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"/>
@@ -18,7 +17,10 @@
       <div class="upload_module">
         <div class="thumbnail_container"><img ng-show="!!file" ngf-thumbnail="file || 'assets/img/thumbnail.jpg'"/></div><i ng-show="upload_form.file.$error.required">*required</i><i ng-show="upload_form.file.$error.maxSize">
           File too large
-          {{file.size / 1000000|number:1}}MB: max 20M</i>&nbsp;&nbsp;{{progress}}
+          {{file.size / 1000000|number:1}}MB: max 20M</i>&nbsp;&nbsp;{{progress}}&nbsp;
+        <div class="key_download red-text" ng-show="succeed">
+          <div id="json"></div>
+        </div>
       </div><br/>
       <button class="btn-lg btn-block btn-info upload_button" type="submit" ng-click="submit()">Upload</button>
       <p> </p>

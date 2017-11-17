@@ -127,13 +127,12 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
   var salt = CryptoJS.lib.WordArray.random(128/8);
   var iv = CryptoJS.lib.WordArray.random(128/8);
 
+	$scope.succeed = false
 	$scope.key_log = key
-	console.log(key);
 
-	var obj = {a: 123, b: "4 5 6"};
-	var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
+	var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(key));
 
-	$('<a href="data:' + data + '" download="data.json">download JSON</a>').appendTo('#json');
+	$('<a href="data:' + data + '" download="key">Download Key</a>').appendTo('#json');
 
   //Request
   userService.getAdmin()
@@ -172,7 +171,8 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
               data:{file:file} //pass file as data, should be user ng-model
           }).then(function (resp) { //upload function returns a promise
               if(resp.data.error_code === 0){ //validate success
-                  $window.alert('Success ' + resp.config.data.file.name + ' uploaded. Response: ');
+                  $window.alert('Success ' + resp.config.data.file.name + ' uploaded.');
+									$scope.succeed = true
               } else {
                   $window.alert('an error occured');
               }

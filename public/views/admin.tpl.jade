@@ -9,8 +9,7 @@
 		br
 		h1.center.white-text File Upload
 		br
-		| {{key_log}}
-		#json
+		
 		form(name='upload_form')
 			span.center#filename Select your file...
 			label(for='file-upload')
@@ -25,7 +24,9 @@
 				i(ng-show='upload_form.file.$error.maxSize')
 					| File too large
 					| {{file.size / 1000000|number:1}}MB: max 20M
-				| &nbsp;&nbsp;{{progress}}
+				| &nbsp;&nbsp;{{progress}}&nbsp;
+				.key_download.red-text(ng-show='succeed')
+					#json
 			br
 			button.btn-lg.btn-block.btn-info.upload_button(type='submit', ng-click='submit()') Upload
 			
