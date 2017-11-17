@@ -9,8 +9,8 @@
 <!-- second section - About-->
 <div class="pad-section font_prompt" id="about" style="background: linear-gradient(90deg, #aea4e3, #d3ffe8); ;">
   <div class="container trans_container font_1dot4"><br/>
-    <h2><span class="label label-info">{{message.info}}</span></h2>
-    <h1 class="center white-text">File Upload</h1><br/>
+    <h1 class="center white-text">File Upload</h1><br/>{{key_log}}
+    <div id="json"></div>
     <form name="upload_form"><span class="center" id="filename">Select your file...</span>
       <label for="file-upload">Browse
         <input id="file-upload" type="file" ngf-select="" ng-model="file" name="file" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB"/>

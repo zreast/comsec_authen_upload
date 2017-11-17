@@ -174,7 +174,7 @@ footer.page-footer {
     margin: 0;
     padding: 0; }
   .text-vcenter .hackertext {
-    -webkit-animation: flicker 2s infinite alternate; }
+    -webkit-animation: flicker 0.8s infinite alternate; }
 
 @-webkit-keyframes flicker {
   0% {

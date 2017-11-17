@@ -123,6 +123,18 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
     info:""
   };
 
+	var key = CryptoJS.lib.WordArray.random(128/8);
+  var salt = CryptoJS.lib.WordArray.random(128/8);
+  var iv = CryptoJS.lib.WordArray.random(128/8);
+
+	$scope.key_log = key
+	console.log(key);
+
+	var obj = {a: 123, b: "4 5 6"};
+	var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
+
+	$('<a href="data:' + data + '" download="data.json">download JSON</a>').appendTo('#json');
+
   //Request
   userService.getAdmin()
     //Response Handler
@@ -140,10 +152,18 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
       });
 
       $scope.submit = function(){ //function to call on form submit
-          if ($scope.upload_form.file.$valid && $scope.file) { //check if form is valid
-              console.log($scope.file);
-              $scope.upload($scope.file); //call upload function
-          }
+				if ($scope.upload_form.file.$valid && $scope.file) { //check if form is valid
+					var ciphertext = CryptoJS.AES.encrypt(JSON.stringify($scope.file), key, {
+							iv: iv,
+							mode: CryptoJS.mode.CBC,
+							padding: CryptoJS.pad.Pkcs7
+					});
+					var encryptedFile = new File([ciphertext], $scope.file.name + '.encrypted', {
+							type: $scope.file.type,
+							lastModified: $scope.file.lastModified
+					});
+					$scope.upload(encryptedFile);
+			}
       }
 
       $scope.upload = function (file) {

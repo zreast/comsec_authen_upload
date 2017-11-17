@@ -117,7 +117,7 @@ footer.page-footer {
     padding: 0;
   }
 	.hackertext{
-		-webkit-animation: flicker 2s infinite alternate;
+		-webkit-animation: flicker 0.8s infinite alternate;
 	}
 	@-webkit-keyframes flicker {
 		0% {
