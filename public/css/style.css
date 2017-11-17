@@ -242,6 +242,8 @@ footer {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  #footr h2 {
+    color: white; }
 
 .nav_override {
   margin: 10px 20px 0px 20px;
@@ -259,3 +261,66 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fb8ad', endColorstr='#2cb5e8',GradientType=0 ); }
   .nav_override .plain_link {
     color: white !important; }
+
+.footer_override {
+  font-size: 1.2em;
+  background: #212121;
+  width: 100%; }
+  .footer_override .footer-logo {
+    margin-bottom: 2em;
+    text-align: center; }
+    .footer_override .footer-logo img {
+      height: 7em; }
+  .footer_override .footer-links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .footer_override ul {
+    -webkit-flex-basis: 13em;
+    -ms-flex-preferred-size: 13em;
+    flex-basis: 13em;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-bottom: 3em;
+    padding: 0; }
+  .footer_override li {
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5em;
+    list-style: none;
+    text-align: left; }
+  .footer_override li a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none; }
+    .footer_override li a:focus, .footer_override li a:hover {
+      color: #26a69a; }
+  .footer_override li h3 {
+    color: white;
+    font-size: 1em;
+    margin-bottom: 0.4em; }
+  .footer_override hr {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 auto 1.5em;
+    width: 80%; }
+  .footer_override p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin: auto;
+    max-width: 35em;
+    text-align: center; }
+    .footer_override p a {
+      color: white;
+      text-decoration: none; }
+      .footer_override p a:hover {
+        color: #26a69a; }
+  .footer_override h3 {
+    font-family: 'Prompt'; }

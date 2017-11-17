@@ -1,26 +1,52 @@
-footer.page-footer.teal
-  .container
-    .row.font_prompt
-      .col.l6.s12
-        h5.white-text เกี่ยวกับเรา
-        p.grey-text.text-lighten-4
-          | Fusce iaculis fringilla tincidunt. Pellentesque velit massa, faucibus vitae laoreet sed, iaculis in urna. Integer auctor, elit in facilisis tristique, dui lacus faucibus massa, ac placerat ligula tortor a mi.
-      .col.l3.s12
-        h5.white-text ข้อมูล
-        ul
-          li
-            a.white-text(href='#!') เงื่อนไขการใช้บริการ
-          li
-            a.white-text(href='#!')  นโยบายความเป็นส่วนตัว
-      .col.l3.s12
-        h5.white-text ติดต่อ
-        ul
-          li
-            a.white-text(href='#!') โทร. :
-          li
-            a.white-text(href='#!') Fax :
-          li
-            a.white-text(href='#!') admin@email.com
-  .footer-copyright
-    .container
-      | Made by Zreast @CE_KMITL
+footer.footer_override.font_prompt(role='contentinfo')
+	.footer-logo
+		img(src='../assets/img/hackerlogo.png', alt='Logo image')
+	.footer-links
+		ul
+			li
+				h3 ข้อมูล
+			li
+				a(href='/about-1') เกี่ยวกับ
+			li
+				a(href='/restaurant') ลูกค้าของเรา
+		ul
+			li
+				h3 &nbsp;
+			li
+				a(href='/media') ข่าวสาร
+			li
+				a(href='/careers') ร่วมงานกับเรา
+		ul
+			li
+				h3 ติดต่อ
+			li
+				| โทร: 02 5173020-2
+			li 
+				| Fax: 02 5173323
+			li
+				a(href='mailto:zreast@gmail.com', target='_top') zreast@gmail.com
+		ul
+			li
+				h3 ติดตาม
+			li
+				a(href='https://www.facebook.com/Umeal.net/')
+					.fa.fa-facebook-square(style='font-size:2em;') &nbsp;
+				a(href='#')
+					.fa.fa-twitter-square(style='font-size:2em;') &nbsp;
+				a(href='#')
+					.fa.fa-instagram(style='font-size:2em;')
+	hr
+	p
+		br
+		a(href='/terms_and_conditions_directive') เงื่อนไขการใช้บริการ
+		| &nbsp;&nbsp;&nbsp;
+		a(href='/privacy_policy_directive') นโยบายการคุ้มครองข้อมูลส่วนบุคคล
+		br
+		| ที่อยู่: เลขที่ 45 ถนน รามอินทรา แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร 10510
+	br
+	//- .footer-logo
+	//-   img(src='img/fahlab_transparent.svg', alt='Fahlab Logo')
+	p
+		| Copyright ©2017 zreast.me
+		br
+		| All right reserved

@@ -19,6 +19,8 @@
 					a.plain_link(href='#/about') My Files
 			ul.nav.navbar-nav.navbar-right
 				li(ng-if='auth.isLogged', ng-model='welcome')
-					a.plain_link(href='#/logout') {{welcome}}! Logout
+					a(style='cursor:default; color:white') {{welcome}}
+				li(ng-if='auth.isLogged', ng-model='welcome')
+					a.plain_link(href='#/logout') Logout
 				li(ng-if='!auth.isLogged')
 					a.plain_link(href='#/login') Login

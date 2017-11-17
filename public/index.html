@@ -39,40 +39,53 @@
             <li ng-show="auth.isLogged"><a class="plain_link" href="#/about">My Files</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li ng-if="auth.isLogged" ng-model="welcome"><a class="plain_link" href="#/logout">{{welcome}}! Logout</a></li>
+            <li ng-if="auth.isLogged" ng-model="welcome"><a style="cursor:default; color:white;">{{welcome}}</a></li>
+            <li ng-if="auth.isLogged" ng-model="welcome"><a class="plain_link" href="#/logout">Logout</a></li>
             <li ng-if="!auth.isLogged"><a class="plain_link" href="#/login">Login</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div ng-view=""></div>
-    <footer class="page-footer teal">
-      <div class="container">
-        <div class="row font_prompt">
-          <div class="col l6 s12">
-            <h5 class="white-text">เกี่ยวกับเรา</h5>
-            <p class="grey-text text-lighten-4">Fusce iaculis fringilla tincidunt. Pellentesque velit massa, faucibus vitae laoreet sed, iaculis in urna. Integer auctor, elit in facilisis tristique, dui lacus faucibus massa, ac placerat ligula tortor a mi.</p>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">ข้อมูล</h5>
-            <ul>
-              <li><a class="white-text" href="#!">เงื่อนไขการใช้บริการ</a></li>
-              <li><a class="white-text" href="#!"> นโยบายความเป็นส่วนตัว</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">ติดต่อ</h5>
-            <ul>
-              <li><a class="white-text" href="#!">โทร. :</a></li>
-              <li><a class="white-text" href="#!">Fax :</a></li>
-              <li><a class="white-text" href="#!">admin@email.com</a></li>
-            </ul>
-          </div>
-        </div>
+    <footer class="footer_override font_prompt" role="contentinfo">
+      <div class="footer-logo"><img src="../assets/img/hackerlogo.png" alt="Logo image"></div>
+      <div class="footer-links">
+        <ul>
+          <li>
+            <h3>ข้อมูล</h3>
+          </li>
+          <li><a href="/about-1">เกี่ยวกับ</a></li>
+          <li><a href="/restaurant">ลูกค้าของเรา</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h3>&nbsp;</h3>
+          </li>
+          <li><a href="/media">ข่าวสาร</a></li>
+          <li><a href="/careers">ร่วมงานกับเรา</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h3>ติดต่อ</h3>
+          </li>
+          <li>โทร: 02 5173020-2</li>
+          <li>
+             Fax: 02 5173323</li>
+          <li><a href="mailto:zreast@gmail.com" target="_top">zreast@gmail.com</a></li>
+        </ul>
+        <ul>
+          <li>
+            <h3>ติดตาม</h3>
+          </li>
+          <li><a href="https://www.facebook.com/Umeal.net/">
+              <div class="fa fa-facebook-square" style="font-size:2em;">&nbsp;</div></a><a href="#">
+              <div class="fa fa-twitter-square" style="font-size:2em;">&nbsp;</div></a><a href="#">
+              <div class="fa fa-instagram" style="font-size:2em;"></div></a></li>
+        </ul>
       </div>
-      <div class="footer-copyright">
-        <div class="container">Made by Zreast @CE_KMITL</div>
-      </div>
+      <hr>
+      <p><br><a href="/terms_and_conditions_directive">เงื่อนไขการใช้บริการ</a>&nbsp;&nbsp;&nbsp;<a href="/privacy_policy_directive">นโยบายการคุ้มครองข้อมูลส่วนบุคคล</a><br>ที่อยู่: เลขที่ 45 ถนน รามอินทรา แขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร 10510</p><br>
+      <p>Copyright ©2017 zreast.me<br>All right reserved</p>
     </footer>
   </body>
 </html>

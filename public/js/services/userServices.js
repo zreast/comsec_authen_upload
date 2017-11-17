@@ -15,7 +15,7 @@ angular.module('myApp.userServices', [])
 		    base64.getJwtProfile()
 		      //Response Handler
 		      .then(function(profile) {
-		      	$rootScope.welcome = 'You are Logged on as ' + JSON.stringify(profile.username) + " | ";
+		      	$rootScope.welcome = 'Welcome ' + JSON.stringify(profile.username);
 		      },
 		      function(error) {
 		        $log.error("Error getting token" + error);
