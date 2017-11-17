@@ -202,3 +202,17 @@ footer {
   -o-background-size: cover;
   background-size: cover;
 }
+
+
+.nav_override{
+	margin: 10px 20px 0px 20px;
+	border-bottom: 1px solid $md-teal-500;
+  background: #0fb8ad; /* Old browsers */
+  background: -moz-linear-gradient(141deg, #0fb8ad 1%, #1fc8db 50%, #2cb5e8 80%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(141deg, #0fb8ad 1%,#1fc8db 50%,#2cb5e8 80%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(141deg, #0fb8ad 1%,#1fc8db 50%,#2cb5e8 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fb8ad', endColorstr='#2cb5e8',GradientType=0 );
+	.plain_link{
+		color:white !important;
+	}
+}
