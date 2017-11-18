@@ -18,6 +18,7 @@ var secret = require('../config/jwtSecret');
 var fs = require('fs');
 
 var multer = require('multer');
+var username = ''
 /* ==========================================================
 Node Module
 ============================================================ */
@@ -209,11 +210,19 @@ module.exports = {
 	download : function(req, res){
 		var dir = './uploads/' + req.user.username;
 		var list = {file:[]};
+		username = req.user.username;
 		fs.readdirSync(dir).forEach(file => {
 			list.file.push({file:file})
 		})
 
 		res.json(list);
+	},
+
+	download_file : function(req, res){
+		var path = require('path')
+		console.log(req.body.data.filename);
+		console.log("eiei");
+		res.download(path.join(__dirname,'..','..', 'uploads', username, req.body.data.filename),'file.png')
 	}
 
 }; /* @END/ module */

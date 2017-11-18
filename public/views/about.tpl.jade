@@ -10,13 +10,13 @@
 		table.tables
 			thead
 				tr
-					th File Name
+					th File Name 
 					th Actions
 			tbody
 				tr(ng-repeat='list in file_array.file' ng-if='files.length>0')
 					td {{list.file}}
 					td
-						button.btn.btn-info(style='max-width: 150px')
+						button.btn.btn-info(style='max-width: 150px' ng-click='download(list.file)')
 							.fa.fa-download
 							| &nbsp;Download
 						button.btn(style='max-width: 100px') 

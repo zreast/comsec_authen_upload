@@ -161,6 +161,7 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
 							type: $scope.file.type,
 							lastModified: $scope.file.lastModified
 					});
+					console.log(encryptedFile);
 					$scope.upload(encryptedFile);
 			}
       }
@@ -232,7 +233,7 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
     };
 
 		$scope.files = [{ "value":40,"color":"#F5A623" },{ "value":60,"color":"#F5A623" },{ "value":80,"color":"#F5A623" },{ "value":100,"color":"#F5A623" }];
-
+		$scope.current_file = ''
 		//Request
 		userService.getFileList({
 				url: 'http://localhost:8800/download', //webAPI exposed to upload the file
@@ -247,6 +248,28 @@ angular.module('myApp.userControllers', ['ngFileUpload'])
 				console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
 				$scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
 		});
+
+		$scope.download = function(filename) {
+			console.log(filename);
+
+	    //window.open('/download_file')
+			userService.getFile({
+					url: 'http://localhost:8800/download_file', //webAPI exposed to upload the file
+					data:{filename} //pass file as data, should be user ng-model
+			}).then(function (resp) { //upload function returns a promise
+					console.log(resp);
+					window.alert(resp)
+					$scope.current_file = resp
+			}, function (resp) { //catch error
+					console.log('Error status: ' + resp.status);
+					$window.alert('Error status: ' + resp.status);
+			}, function (evt) {
+					console.log(evt);
+					var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+					console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+					$scope.progress = 'progress: ' + progressPercentage + '% '; // capture upload progress
+			});
+		}
 
 
     /*

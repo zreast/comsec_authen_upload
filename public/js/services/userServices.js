@@ -92,6 +92,19 @@ angular.module('myApp.userServices', [])
 		    return deferred.promise; //returns the promise
 		},
 
+		getFile : function(filename) {
+			console.log(filename);
+			var deferred = $q.defer();
+		  $http.post('/download_file', filename)
+		    .success(function(data, status) {
+					deferred.resolve(data);
+		    })
+		    .error(function(reason, status) {
+
+		    });
+		    return deferred.promise; //returns the promise
+		},
+
 		getAdmin : function() {
 
 		  var deferred = $q.defer();
